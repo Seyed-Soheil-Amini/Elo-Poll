@@ -11,9 +11,9 @@
 	var lossStock;
 	var lossRate;
 	var lossId;
-	function change(j)
+	function change(field)
 	{
-		if(j == 'right'){
+		if(field == 'right'){
 			wonName = "Rname";
 			wonCompany = "Rcompany";
 			wonStock = "Rstock";
@@ -51,6 +51,7 @@
 		var Ea = (1/(1+Math.pow(10,(Math.abs((rateW - rateL))/(400.0)))));
 		xhr.onreadystatechange = function()
 		{
+			//alert("bug");
 			if(xhr.readyState == 4 && xhr.status == 200){
 				const responseArray = xhr.responseText.substr(1,(xhr.responseText.length-2)).split("_");
 					document.getElementById(lossName).innerHTML = responseArray[0];
